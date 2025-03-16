@@ -1,0 +1,405 @@
+*{
+    box-sizing:border-box; /* propiedad que me permite que al agg margen no crezcan mas del tamaño que yo diga */
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.logo {
+    color: blueviolet; /* Color de la letra */
+    font-weight: bold; /* Hace la letra más gruesa */
+    font-size: 1.6em; /* Tamaño corregido */
+}
+
+body{
+    font-family:'Roboto',sans-serif;
+    margin: 0;
+}
+
+h1{font-size: 3.5em;}
+h2{font-size: 2.7em;}
+h3{font-size: 2em;}
+p{font-size: 1.25em}
+ul{list-style: none;}
+
+
+button{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 10px rgb(0, 0, 0, 0.5);
+    color: white;
+    background-color: blueviolet;
+}
+
+button:hover{
+    background-color: rgb(101,33,165);
+}
+
+.container{
+    max-width: 1400px; /*El contenido se centra al estirar la pagina*/
+    margin: auto;
+}
+
+.color-acento{color:blueviolet;}
+
+
+header{
+    background-color: rgb(245, 245, 245);
+    z-index: 1000;  /* Mantiene el header por encima de otros elementos */
+
+}
+
+header .ogo{
+    margin:0;
+    padding: 25px 30px;    /*20 arriba y abajo, 30 en los bordes*/
+    font-weight: bold;
+    color:blueviolet;
+    font-size: 1.6 em;
+}
+
+header .container{  /*selecciona el container que esta dentro del header*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+header a{
+    padding: 5px 12px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black
+}
+
+header a:hover{  
+    color: blueviolet;
+}
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 90vh; /*ocupará el 90% de mi pantalla*/
+    color: white ;
+    background-image:linear-gradient(    /*coloca un filtro negro a mi imagen principal*/
+      0deg,
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)  
+    )
+    ,url("images/img_encabezado.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#hero h1{
+    color: white;
+}
+#hero button{
+    font-size: 1.75em;
+}
+
+
+#Conoce-de-mi .container{
+    text-align: center;
+    padding: 200px 12px;
+}
+
+#Desarrolladora-Exploradora-Aprendiz {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    text-align: center;
+}
+
+#Desarrolladora-Exploradora-Aprendiz .container{
+    padding: 150px 0px;
+}
+
+#Desarrolladora-Exploradora-Aprendiz h2{
+    margin-top: 0;
+    font-size: 3.2em;
+
+}
+
+#Desarrolladora-Exploradora-Aprendiz p{
+    display: none;
+
+}
+
+#Desarrolladora-Exploradora-Aprendiz .carta{
+    background-position: center center;
+    background-size: cover;
+    padding: 50px;
+    margin: 20px;
+    border-radius: 15px;
+
+}
+
+.carta:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)  
+      )
+      ,url("images/yo_glob.jpg");
+}
+
+.carta:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)  
+      )
+      ,url("images/yo_banco.jpg");
+}
+
+.carta:nth-child(3){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)  
+      )
+      ,url("images/univ.jpg");
+}
+
+#caracteristicas .container{
+    text-align: center;
+    padding: 200px 12px;
+}
+
+#caracteristica li{
+    margin: 16px;
+    font-weight: bold;
+}
+
+#Conectemos{
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(30, 30, 30);
+    color: white;
+    height: 80vh;
+}
+
+#final h2{
+    font-size: 9vw;   /*Se ve de acuerdo a la pantalla, no se enciman las letras*/
+}
+
+#final button{
+    font-size: 5vw;
+}
+
+footer{
+    background-color: rgb(230, 230, 230);
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100, 100, 100)
+}
+
+footer .container{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@media (min-width: 720px){
+    header{
+        position: fixed;
+        width: 100%;
+    }
+
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+
+    } 
+    
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    #Conoce-de-mi .container{  /*Seccion que necesito para una foto cuadrada*/
+        display: flex;
+        justify-content: space-evenly;
+
+    }
+
+    #hero h1{
+        font-size: 5em;
+    }
+
+
+    #Conoce-de-mi .texto {
+        width: 50%;
+        max-width: 600px;
+        text-align: justify;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #Conoce-de-mi p {
+        line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+        margin-top: 10px; /* Espacio entre el título y el párrafo */
+    }
+
+    #Conoce-de-mi h2{
+        margin-top:0px;   
+    }
+
+
+    #Conoce-de-mi .img-container{
+        background-image: url("images/yo_beb.jpg");
+        background-size: cover;
+        background-position: center center;
+        height: 500px;
+        width: 400px;
+
+    } 
+    
+    #Desarrolladora-Exploradora-Aprendiz .que-me-gusta{
+        display: flex;
+        justify-content: center;
+    }
+
+    #Desarrolladora-Exploradora-Aprendiz p{
+        display: block;
+        margin-bottom: 30px;
+    }
+    #Desarrolladora-Exploradora-Aprendiz h2{
+        font-size: 4em;
+
+    }
+
+
+    #Desarrolladora-Exploradora-Aprendiz h3{
+        margin-top: 0;
+
+    }
+
+    #Desarrolladora-Exploradora-Aprendiz .carta{
+        padding: 50px;
+        background-size: 100% 150%;
+        background-repeat: no-repeat;
+        background-position: center;
+        box-shadow: 2px 2px 10px rgba(0,0,0.5);
+
+
+    }
+
+    .carta:first-child{
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)  
+          )
+          ,url("images/yo_glob.jpg");
+    }
+    
+    .carta:nth-child(2){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)  
+          )
+          ,url("images/yo_banco.jpg");
+    }
+    
+    .carta:nth-child(3){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)  
+          )
+          ,url("images/univ.jpg");
+    }
+
+    #caracteristicas {
+        display: block;
+        align-items: center;
+        justify-content: space-between;
+        padding: 80px 20px;
+        min-height: 450px;
+        position: relative;
+        z-index: 1; /* Se mantiene detrás del header */
+        padding-top: 100px; /* Ajusta según la altura del header */
+    }
+    
+    #caracteristicas .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    
+    /* Sección de la imagen con el gradiente */
+    #caracteristicas .imagen {
+        width: 400px;
+        height: 300px;
+        margin-right: 50px;
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        ), url("images/yo_estrell.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 15px; /* Bordes redondeados */
+        box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+    }
+    
+    /* Lista de corazones en vertical */
+    #caracteristicas ul {
+        display: flex;
+        flex-direction: column; /* Apilar en vertical */
+        align-items: flex-start; /* Alineación a la izquierda */
+        gap: 20px; /* Espaciado entre corazones */
+        font-size: 3em;
+        margin-left: 50px;
+    }
+
+    #Conectemos h2{
+        font-size: 5em;
+    }
+    #Conectemos button{
+        font-size: 2em;
+    }
+
+    #footer .container{
+        justify-content: flex;
+
+    }
+
+    @media (min-width: 1200px) {
+    
+        #caracteristicas {
+            background-position: calc(100vw - 800px) center;    
+        }
+    }
+    
+    section {
+        scroll-margin-top: 80px; /* Ajusta según la altura del header */
+    }
+    
+}
